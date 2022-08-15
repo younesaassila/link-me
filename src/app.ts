@@ -21,39 +21,38 @@ urlInputForm.addEventListener("submit", async e => {
 window.addEventListener("load", async () => {
   const params = new URLSearchParams(window.location.search)
   const urlParam = params.get("url")
-  if (urlParam != null) {
-    let url: URL
-    try {
-      url = new URL(urlParam)
-    } catch (error) {
-      setPreviewCard({
-        title: "Invalid URL",
-        description: "Please enter a valid URL.",
-      })
-      return
-    }
-    setLoadingState(true)
-    previewUrlWrapper.textContent = url.href
-    try {
-      await fetchAndSetPreviewCard(url)
-      previewUrlWrapper.textContent = ""
-      const previewUrl = document.createElement("a")
-      previewUrl.href = url.href
-      previewUrl.textContent = url.href
-      previewUrlWrapper.appendChild(previewUrl)
-    } catch (error) {
-      setPreviewCard({
-        title: "Error",
-        description: error.message,
-      })
-    } finally {
-      setLoadingState(false)
-    }
-  } else {
+  if (urlParam == null) {
     urlInputForm.style.display = "block"
     previewUrlWrapper.style.display = "none"
     previewCard.style.display = "none"
+    return
   }
+  let url: URL
+  try {
+    url = new URL(urlParam)
+  } catch (error) {
+    setPreviewCard({
+      title: "Invalid URL",
+      description: "Please enter a valid URL.",
+    })
+    return
+  }
+  setLoadingState(true)
+  previewUrlWrapper.textContent = url.href
+  try {
+    await fetchAndSetPreviewCard(url)
+    previewUrlWrapper.textContent = ""
+    const previewUrl = document.createElement("a")
+    previewUrl.href = url.href
+    previewUrl.textContent = url.href
+    previewUrlWrapper.appendChild(previewUrl)
+  } catch (error) {
+    setPreviewCard({
+      title: "Error",
+      description: error.message,
+    })
+  }
+  setLoadingState(false)
 })
 
 function setLoadingState(loading: boolean) {
