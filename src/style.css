@@ -1,0 +1,86 @@
+:root {
+  --font-hyperlegible: "Atkinson Hyperlegible", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh; /* Fixes https://stackoverflow.com/questions/59823681/webapp-on-iphone-with-black-translucent-statusbar-viewport-height-seems-to-be-w */
+  font-size: 100%; /* See https://whitep4nth3r.com/blog/how-to-make-your-font-sizes-accessible-with-css/#set-font-size-100-on-the-html-tag */
+}
+
+body {
+  -webkit-text-size-adjust: 100%; /* Fixes https://stackoverflow.com/questions/2710764/preserve-html-font-size-when-iphone-orientation-changes-from-portrait-to-landsca */
+  text-size-adjust: 100%;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  text-align: center;
+}
+
+#url-input-form {
+  display: none;
+  margin-top: var(--spacing);
+}
+
+#url-input {
+  font-family: var(--font-hyperlegible);
+}
+
+#preview-url-wrapper {
+  font-size: calc(var(--font-size) * 2);
+  font-family: var(--font-hyperlegible);
+}
+
+#preview-card {
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0;
+  padding-left: 0;
+  text-align: center;
+}
+
+#preview-card header {
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding: calc(var(--block-spacing-vertical))
+    calc(var(--block-spacing-horizontal) * 1.5);
+}
+
+#preview-card[aria-busy="true"] header {
+  display: none;
+}
+
+#preview-card footer {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+  padding: calc(var(--block-spacing-vertical))
+    calc(var(--block-spacing-horizontal) * 1.5);
+}
+
+#preview-card[aria-busy="true"] footer {
+  display: none;
+}
+
+#preview-title {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+#preview-image-wrapper {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#preview-description {
+  margin-bottom: 0;
+  font-size: calc(var(--font-size) * 1.3);
+}

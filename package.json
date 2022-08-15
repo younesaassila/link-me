@@ -1,0 +1,23 @@
+{
+  "name": "link-me",
+  "version": "2.0.0",
+  "description": "Preview URLs before visiting them",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build",
+    "lint": "prettier --check ./src"
+  },
+  "keywords": [],
+  "author": "Younes Aassila <contact@aassila.com> (https://www.aassila.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/punycode": "^2.1.0",
+    "parcel": "^2.7.0",
+    "postcss": "^8.4.16",
+    "prettier": "^2.7.1",
+    "prettier-plugin-css-order": "^1.3.0",
+    "typescript": "^4.7.4"
+  },
+  "private": true
+}

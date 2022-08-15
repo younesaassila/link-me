@@ -1,0 +1,6 @@
+{
+  "arrowParens": "avoid",
+  "endOfLine": "auto",
+  "order": "smacss",
+  "semi": false
+}
