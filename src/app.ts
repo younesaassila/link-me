@@ -67,7 +67,7 @@ async function fetchAndSetPreviewCard(url: URL) {
 
 async function fetchPreviewCard(url: URL): Promise<PreviewCard> {
   return fetch(
-    `https://embtr.now.sh/scrape?url=${encodeURIComponent(url.href)}`
+    `https://embtr.vercel.app/scrape?url=${encodeURIComponent(url.href)}`
   ).then(response => response.json())
 }
 
