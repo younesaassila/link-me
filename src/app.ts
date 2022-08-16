@@ -3,8 +3,8 @@ import { PreviewCard } from "./types"
 
 //#region HTML elements
 const urlInputForm = $("#url-input-form") as HTMLFormElement
-const previewUrlWrapper = $("#preview-url-wrapper") as HTMLAnchorElement
-const previewCard = $("#preview-card") as HTMLDivElement
+const previewUrlWrapper = $("#preview-url-wrapper") as HTMLSpanElement
+const previewCard = $("#preview-card") as HTMLElement
 const previewTitle = $("#preview-title") as HTMLHeadingElement
 const previewImageWrapper = $("#preview-image-wrapper") as HTMLDivElement
 const previewImage = $("#preview-image") as HTMLImageElement
